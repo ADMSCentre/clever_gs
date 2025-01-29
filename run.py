@@ -97,8 +97,11 @@ def main(first_name, last_name, google_scholar_code):
 	flagged_entries = list()
 	years_qualifying = [x for x in range(CURRENT_YEAR-LOOKBEHIND, CURRENT_YEAR+1)]
 	for x in google_scholar_entries:
-		if ((not any([are_similar(x["title"], y) for y in adms_entries])) and (int(x["date"]) in years_qualifying)):
-			flagged_entries.append(x)
+		try:
+			if ((not any([are_similar(x["title"], y) for y in adms_entries])) and (int(x["date"]) in years_qualifying)):
+				flagged_entries.append(x)
+		except:
+			pass
 
 	print(json.dumps(flagged_entries, indent=3))
 
