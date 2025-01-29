@@ -20,6 +20,7 @@ iniconfig==2.0.0
 ipdb==0.13.13
 ipython==8.29.0
 jedi==0.19.2
+levenshtein==0.26.1
 markdown-it-py==3.0.0
 matplotlib-inline==0.1.7
 mdurl==0.1.2
